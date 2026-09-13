@@ -40,21 +40,42 @@ detailed figure mapping are documented in
 The other scripts and workbooks are retained as additional historical or
 exploratory analyses and are not claimed to reproduce published figures.
 
-## Published figures
+## Assemble the publication matrices
 
 The four publication Live Scripts were executed interactively with MATLAB
-R2026a on 13 September 2026 and generated 72 seasonal panel files. The final
-article used 60 of these panels in two 5 × 6 compositions:
+R2026a on 13 September 2026 and generated 72 seasonal panel files. After those
+scripts finish, assemble the two 5 × 6 compositions in both the original and
+cmocean colour variants from the generated PNG files:
 
-- [Supplementary Figure 1](figures/supplementary_figure_1.png) — CTD profiles
-- [Supplementary Figure 2](figures/supplementary_figure_2.png) — nutrient profiles
+```matlab
+addpath(fullfile(pwd, 'scripts', 'figures'));
+assemble_supplementary_figures;
+```
 
-Rows represent variables. Columns show winter, spring, and summer at the
-offshore station followed by the same seasons at the coastal station. The two
-high-resolution PNGs reproduce the published compositions; the original 900
-DPI TIFF files from the article were converted losslessly for display on
-GitHub. See [`figures/README.md`](figures/README.md) for provenance and the
-complete panel mapping.
+The assembler selects the 60 panels used by the article and writes two
+compositions with the original article colour scale plus two perceptually
+uniform cmocean alternatives. Rows represent variables. Columns show winter,
+spring, and summer at the offshore station followed by the same seasons at the
+coastal station. See [`figures/README.md`](figures/README.md) for the complete
+mapping, output names, and cmocean palette assignments.
+
+## Generate longitudinal sections
+
+The six historical ENV1–ENV3 Live Scripts are preserved under
+`live_scripts/longitudinal/`. A restored generator reads the curated workbooks
+by column name and corrects obsolete row counts and station copy-and-paste
+errors without changing the historical linear interpolation method:
+
+```matlab
+addpath(fullfile(pwd, 'scripts', 'longitudinal'));
+generate_longitudinal_sections;
+```
+
+It generates the 36 winter, spring, and summer vertical-section panels with
+both the original `jet` scale and variable-specific cmocean alternatives under
+`figures/longitudinal/`. See
+[`live_scripts/longitudinal/README.md`](live_scripts/longitudinal/README.md)
+for the audit findings and data mapping.
 
 ## Run
 
@@ -87,10 +108,11 @@ coastal-upwelling-oceanography/
 │   ├── temporal/         # Published temporal profile scripts
 │   └── longitudinal/     # Additional transect analyses
 ├── figures/
-│   ├── supplementary_figure_1.png
-│   └── supplementary_figure_2.png
+│   ├── longitudinal/      # Generated ENV1–ENV3 vertical sections
+│   └── README.md          # Destination for the four assembled matrices
 ├── scripts/
-│   ├── figures/          # Historical figure scripts
+│   ├── figures/          # Matrix assembler and historical figure scripts
+│   ├── longitudinal/     # Restored longitudinal-section generator
 │   └── exploratory/      # Exploratory analyses
 ├── third_party/          # External MATLAB utilities and notices
 ├── coastal_setup.m       # Workflow and data-path setup
@@ -112,8 +134,8 @@ contact information.
 ## Requirements and validation
 
 The workflows use MATLAB functions including `xlsread` and `exportgraphics`.
-`gridfit`, `brewermap`, and `brewermap_view` are retained under `third_party/`
-with their original attribution and notices.
+`gridfit`, `brewermap`, `brewermap_view`, and `cmocean` are retained under
+`third_party/` with their original attribution and notices.
 
 The selected publication Live Scripts match their historical counterparts byte
 for byte. Their input names and output panels were matched to the final
@@ -126,9 +148,11 @@ seasons, and both workflows were reviewed visually. Automated batch execution
 from the migration environment remained unavailable because MATLAB Service
 Host returned licensing error 5201; this did not affect the interactive run.
 
-The historical exploratory script `oceanographic_exploration.m` also references
-an unavailable `nutrients_remedios_cruise.mat` file and the external `cmocean`
-package. This limitation does not affect the four publication Live Scripts.
+The historical exploratory script `oceanographic_exploration.m` references an
+unavailable `nutrients_remedios_cruise.mat` file. The previously external
+`cmocean` dependency is now bundled, but the missing data file still prevents
+that exploratory workflow from running in full. This limitation does not
+affect the four publication Live Scripts.
 
 ## Associated publications
 

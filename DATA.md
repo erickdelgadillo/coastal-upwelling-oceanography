@@ -52,15 +52,23 @@ in Supplementary Figure 2. The 12 additional TIN and bottle chlorophyll-a
 outputs are not part of these published figures.
 
 The individual generated files remain in `data/temporal/` as ignored local
-outputs. The two versioned files under [`figures/`](figures/) reproduce the
-complete published 5 × 6 layouts. They were converted losslessly from the
-official 900 DPI TIFF files deposited with the article; the 2024 originals and
-2026 correction package contain byte-identical versions of Figures S1 and S2.
+outputs. Run `scripts/figures/assemble_supplementary_figures.m` to select the 60
+publication panels and create the four complete 5 × 6 colour variants under
+[`figures/`](figures/). The matrices are derived exclusively from the locally
+generated PNG files.
+
+The six workbooks under `data/longitudinal/` contain the ENV1–ENV3 observations
+used for vertical sections across the coast–offshore transect. The preserved
+historical Live Scripts contain obsolete row-count assumptions and station
+copy-and-paste errors. Use
+`scripts/longitudinal/generate_longitudinal_sections.m` to generate corrected,
+traceable outputs under `figures/longitudinal/`.
 
 ## Known missing exploratory input
 
 `scripts/exploratory/oceanographic_exploration.m` references
 `nutrients_remedios_cruise.mat`. That file was not present in the curated data
-archive and is therefore not included. The same script calls the external
-`cmocean` package, which is also not bundled. These dependencies apply only to
-that exploratory script and not to the documented publication workflow.
+archive and is therefore not included. The `cmocean` package is now bundled;
+only the missing MAT file prevents that exploratory workflow from running in
+full. This limitation does not affect the documented temporal or longitudinal
+workflows.

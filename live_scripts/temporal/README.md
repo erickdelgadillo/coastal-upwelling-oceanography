@@ -35,7 +35,8 @@ working folder to `data/temporal/`, so the historical relative filenames
 continue to resolve unchanged. Generated PNG files are written beside the
 workbooks and ignored by Git. Curated copies from the successful interactive
 run on 13 September 2026 remain locally under `data/temporal/`. The complete
-published compositions are versioned under [`figures/`](../../figures/).
+matrices can then be generated with
+[`assemble_supplementary_figures.m`](../../scripts/figures/assemble_supplementary_figures.m).
 
 All four scripts were run with MATLAB R2026a using the light figure theme. The
 run produced all 72 expected panel files: 30 CTD outputs and 42 nutrient and
