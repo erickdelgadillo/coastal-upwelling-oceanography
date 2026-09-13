@@ -1,0 +1,12 @@
+# Keep third-party utilities out of repository language statistics.
+third_party/** linguist-vendored
+
+# Disambiguate MATLAB source files from Objective-C source files.
+*.m linguist-language=MATLAB
+
+# MATLAB Live Scripts are ZIP-based binary documents.
+*.mlx binary
+*.mlx -linguist-detectable
+
+# Scientific input workbooks are binary files.
+*.xlsx binary

@@ -1,0 +1,18 @@
+# Operating-system and editor files
+.DS_Store
+*.asv
+*.m~
+*.autosave
+
+# MATLAB and Simulink generated files
+*.mex*
+slprj/
+sccprj/
+codegen/
+*.slxc
+*.mdl.r*
+*.slx.r*
+
+# Generated analysis outputs
+results/
+data/**/*.png
