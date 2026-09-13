@@ -40,6 +40,20 @@ detailed figure mapping are documented in
 The other scripts and workbooks are retained as additional historical or
 exploratory analyses and are not claimed to reproduce published figures.
 
+## Generated publication panels
+
+The four publication Live Scripts were executed interactively with MATLAB
+R2026a on 13 September 2026. They generated all 72 expected seasonal panels:
+
+- [`figures/publication/supplementary_figure_1_ctd/`](figures/publication/supplementary_figure_1_ctd/) — 30 CTD panels
+- [`figures/publication/supplementary_figure_2_nutrients/`](figures/publication/supplementary_figure_2_nutrients/) — 42 nutrient and chlorophyll-a panels
+
+These are the individual outputs produced by the historical scripts. The final
+multipanel layouts used in the article were assembled separately and are not
+reconstructed here. See
+[`figures/publication/README.md`](figures/publication/README.md) for the complete
+output inventory and generation details.
+
 ## Run
 
 Start MATLAB in the repository root:
@@ -70,6 +84,8 @@ coastal-upwelling-oceanography/
 ├── live_scripts/
 │   ├── temporal/         # Published temporal profile scripts
 │   └── longitudinal/     # Additional transect analyses
+├── figures/
+│   └── publication/      # Generated panels for Supplementary Figures 1 and 2
 ├── scripts/
 │   ├── figures/          # Historical figure scripts
 │   └── exploratory/      # Exploratory analyses
@@ -100,9 +116,12 @@ The selected publication Live Scripts match their historical counterparts byte
 for byte. Their input names and output panels were matched to the final
 supplementary figures. The workbooks pass ZIP-container integrity checks.
 
-The MATLAB executable available during this migration exited before startup,
-so the workflows were not rerun end to end in this environment. The setup
-function and all expected workflow directories were checked statically.
+The four publication Live Scripts were run interactively with MATLAB R2026a on
+13 September 2026 and produced all 72 expected PNG panels. Every output was
+checked as a valid PNG, and representative panels from both stations, all three
+seasons, and both workflows were reviewed visually. Automated batch execution
+from the migration environment remained unavailable because MATLAB Service
+Host returned licensing error 5201; this did not affect the interactive run.
 
 The historical exploratory script `oceanographic_exploration.m` also references
 an unavailable `nutrients_remedios_cruise.mat` file and the external `cmocean`

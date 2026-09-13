@@ -30,7 +30,13 @@ open(fullfile(paths.repo_root, 'live_scripts', 'temporal', 'station3_ctd.mlx'));
 Open each `.mlx` file and select **Run**. The setup function changes MATLAB's
 working folder to `data/temporal/`, so the historical relative filenames
 continue to resolve unchanged. Generated PNG files are written beside the
-workbooks and ignored by Git.
+workbooks and ignored by Git. Curated copies from the successful interactive
+run on 13 September 2026 are versioned under
+[`figures/publication/`](../../figures/publication/).
+
+All four scripts were run with MATLAB R2026a using the light figure theme. The
+run produced all 72 expected panels: 30 CTD outputs and 42 nutrient and
+chlorophyll-a outputs.
 
 ## Input checksums
 

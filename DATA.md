@@ -45,7 +45,15 @@ the repository was created.
 
 Historical scripts write PNG panels beside their input workbooks. These files
 are ignored by Git so running a workflow does not add generated figures to the
-data inventory.
+data inventory. The four publication workflows were executed interactively on
+13 September 2026, producing all 72 expected panels. Exact copies of those
+outputs are versioned under [`figures/publication/`](figures/publication/): 30
+CTD panels for Supplementary Figure 1 and 42 nutrient and chlorophyll-a panels
+for Supplementary Figure 2.
+
+The copies were verified byte for byte against the files produced in
+`data/temporal/`. The original generated files remain in that directory as
+ignored local outputs.
 
 ## Known missing exploratory input
 

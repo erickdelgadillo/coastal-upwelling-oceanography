@@ -1,8 +1,10 @@
 # Operating-system and editor files
 .DS_Store
+.Rhistory
 *.asv
 *.m~
 *.autosave
+.local-backup/
 
 # MATLAB and Simulink generated files
 *.mex*
