@@ -46,14 +46,16 @@ the repository was created.
 Historical scripts write PNG panels beside their input workbooks. These files
 are ignored by Git so running a workflow does not add generated figures to the
 data inventory. The four publication workflows were executed interactively on
-13 September 2026, producing all 72 expected panels. Exact copies of those
-outputs are versioned under [`figures/publication/`](figures/publication/): 30
-CTD panels for Supplementary Figure 1 and 42 nutrient and chlorophyll-a panels
-for Supplementary Figure 2.
+13 September 2026, producing all 72 expected panel files. The final publication
+uses 60 of them: 30 CTD panels in Supplementary Figure 1 and 30 nutrient panels
+in Supplementary Figure 2. The 12 additional TIN and bottle chlorophyll-a
+outputs are not part of these published figures.
 
-The copies were verified byte for byte against the files produced in
-`data/temporal/`. The original generated files remain in that directory as
-ignored local outputs.
+The individual generated files remain in `data/temporal/` as ignored local
+outputs. The two versioned files under [`figures/`](figures/) reproduce the
+complete published 5 × 6 layouts. They were converted losslessly from the
+official 900 DPI TIFF files deposited with the article; the 2024 originals and
+2026 correction package contain byte-identical versions of Figures S1 and S2.
 
 ## Known missing exploratory input
 

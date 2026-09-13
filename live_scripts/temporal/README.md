@@ -7,15 +7,18 @@ are stored under the repository's `data/temporal/` directory.
 
 ## Figure mapping
 
-| Figure | Station | Live script | Input | Exported panels |
+| Figure | Station | Live script | Input | Panels used in the publication |
 | --- | --- | --- | --- | --- |
 | Supplementary Figure 1 | Offshore (Station 3) | `station3_ctd.mlx` | `S3_CTD.xlsx` | Temperature, salinity, fluorescence, turbidity, and PAR |
 | Supplementary Figure 1 | Coast (Station 6) | `station6_ctd.mlx` | `S6_CTD.xlsx` | Temperature, salinity, fluorescence, turbidity, and PAR |
-| Supplementary Figure 2 | Offshore (Station 3) | `station3_nutrients.mlx` | `S3_Metadata.xlsx` | NO2, NO3, NH4, TIN, PO4, SiO2, and chlorophyll-a |
-| Supplementary Figure 2 | Coast (Station 6) | `station6_nutrients.mlx` | `S6_Metadata.xlsx` | NO2, NO3, NH4, TIN, PO4, SiO2, and chlorophyll-a |
+| Supplementary Figure 2 | Offshore (Station 3) | `station3_nutrients.mlx` | `S3_Metadata.xlsx` | NH4, NO2, NO3, SiO2, and PO4 |
+| Supplementary Figure 2 | Coast (Station 6) | `station6_nutrients.mlx` | `S6_Metadata.xlsx` | NH4, NO2, NO3, SiO2, and PO4 |
 
-The scripts export individual seasonal panels. The final multipanel figures
-were assembled separately for publication.
+The scripts export individual seasonal panels. The nutrient scripts also
+export TIN and bottle chlorophyll-a panels, but those 12 outputs are not used in
+Supplementary Figure 2. The published figures arrange the selected panels in a
+5 × 6 grid: variables by row, with offshore winter/spring/summer followed by
+coastal winter/spring/summer in the columns.
 
 ## Run
 
@@ -31,12 +34,13 @@ Open each `.mlx` file and select **Run**. The setup function changes MATLAB's
 working folder to `data/temporal/`, so the historical relative filenames
 continue to resolve unchanged. Generated PNG files are written beside the
 workbooks and ignored by Git. Curated copies from the successful interactive
-run on 13 September 2026 are versioned under
-[`figures/publication/`](../../figures/publication/).
+run on 13 September 2026 remain locally under `data/temporal/`. The complete
+published compositions are versioned under [`figures/`](../../figures/).
 
 All four scripts were run with MATLAB R2026a using the light figure theme. The
-run produced all 72 expected panels: 30 CTD outputs and 42 nutrient and
-chlorophyll-a outputs.
+run produced all 72 expected panel files: 30 CTD outputs and 42 nutrient and
+chlorophyll-a outputs. Sixty panels are represented in the two published
+figures.
 
 ## Input checksums
 

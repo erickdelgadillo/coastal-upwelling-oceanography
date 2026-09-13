@@ -29,7 +29,7 @@ nutrient panels.
 
 | Published figure | Content | Live scripts | Input workbooks |
 | --- | --- | --- | --- |
-| Supplementary Figure 1 | Temperature, PAR, chlorophyll-a, salinity, and turbidity profiles | `station3_ctd.mlx`, `station6_ctd.mlx` | `S3_CTD.xlsx`, `S6_CTD.xlsx` |
+| Supplementary Figure 1 | Temperature, fluorescence-derived chlorophyll-a, PAR, salinity, and turbidity profiles | `station3_ctd.mlx`, `station6_ctd.mlx` | `S3_CTD.xlsx`, `S6_CTD.xlsx` |
 | Supplementary Figure 2 | Ammonium, nitrite, nitrate, silicate, and phosphate profiles | `station3_nutrients.mlx`, `station6_nutrients.mlx` | `S3_Metadata.xlsx`, `S6_Metadata.xlsx` |
 
 Station 3 is the offshore station and Station 6 is the coastal station. The
@@ -40,19 +40,21 @@ detailed figure mapping are documented in
 The other scripts and workbooks are retained as additional historical or
 exploratory analyses and are not claimed to reproduce published figures.
 
-## Generated publication panels
+## Published figures
 
 The four publication Live Scripts were executed interactively with MATLAB
-R2026a on 13 September 2026. They generated all 72 expected seasonal panels:
+R2026a on 13 September 2026 and generated 72 seasonal panel files. The final
+article used 60 of these panels in two 5 × 6 compositions:
 
-- [`figures/publication/supplementary_figure_1_ctd/`](figures/publication/supplementary_figure_1_ctd/) — 30 CTD panels
-- [`figures/publication/supplementary_figure_2_nutrients/`](figures/publication/supplementary_figure_2_nutrients/) — 42 nutrient and chlorophyll-a panels
+- [Supplementary Figure 1](figures/supplementary_figure_1.png) — CTD profiles
+- [Supplementary Figure 2](figures/supplementary_figure_2.png) — nutrient profiles
 
-These are the individual outputs produced by the historical scripts. The final
-multipanel layouts used in the article were assembled separately and are not
-reconstructed here. See
-[`figures/publication/README.md`](figures/publication/README.md) for the complete
-output inventory and generation details.
+Rows represent variables. Columns show winter, spring, and summer at the
+offshore station followed by the same seasons at the coastal station. The two
+high-resolution PNGs reproduce the published compositions; the original 900
+DPI TIFF files from the article were converted losslessly for display on
+GitHub. See [`figures/README.md`](figures/README.md) for provenance and the
+complete panel mapping.
 
 ## Run
 
@@ -85,7 +87,8 @@ coastal-upwelling-oceanography/
 │   ├── temporal/         # Published temporal profile scripts
 │   └── longitudinal/     # Additional transect analyses
 ├── figures/
-│   └── publication/      # Generated panels for Supplementary Figures 1 and 2
+│   ├── supplementary_figure_1.png
+│   └── supplementary_figure_2.png
 ├── scripts/
 │   ├── figures/          # Historical figure scripts
 │   └── exploratory/      # Exploratory analyses
