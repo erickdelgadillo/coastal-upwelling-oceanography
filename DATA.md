@@ -1,20 +1,22 @@
 # Data inventory and provenance
 
-The repository includes the 15 Excel workbooks required by the retained MATLAB
-workflows. They were copied without modification from the curated data archive
-formerly shared with the metatranscriptomic repository.
+The repository includes 31 data files: 22 Excel workbooks and 9 CSV files.
+They were copied without modification from the curated data archive formerly
+shared with the metatranscriptomic repository and from the preserved local
+ENVISION MATLAB archive.
 
 ## Layout
 
 | Directory | Files | Scope |
 | --- | ---: | --- |
 | `data/temporal/` | 6 | Station 3 and Station 6 publication profiles plus two additional ENV1 analyses |
-| `data/longitudinal/` | 6 | CTD and nutrient inputs for ENV1–ENV3 transects |
+| `data/longitudinal/` | 6 | CTD and nutrient inputs used by the static ENV1–ENV3 transects |
+| `data/longitudinal/daily_ctd/` | 16 | Available daily CTD transects used by the animations |
 | `data/exploratory/` | 1 | General environmental metadata used by exploratory scripts |
 | `data/figures/` | 2 | AMT29 profile inputs used by the plain MATLAB figure workflow |
 
-The total size is approximately 31 MB. Each workbook is below GitHub's
-individual file-size limit.
+The total size is approximately 32 MB. Each file is below GitHub's individual
+file-size limit.
 
 ## Published inputs
 
@@ -63,6 +65,21 @@ historical Live Scripts contain obsolete row-count assumptions and station
 copy-and-paste errors. Use
 `scripts/longitudinal/generate_longitudinal_sections.m` to generate corrected,
 traceable outputs under `figures/longitudinal/`.
+
+These static sections are individual-day snapshots, not averages. Their CTD
+days are ENV1 day 7, ENV2 day 7, and ENV3 day 5; the nutrient sections use day
+1 in all three campaigns. The recovered daily CTD set contains ENV1 days 1–8,
+ENV2 days 1, 3, 5, and 7, and ENV3 days 1, 3, 5, and 7. ENV3 day 5 contains
+nine longitude positions rather than ten. No equivalent multi-day nutrient
+transects were found, so the animation workflow is restricted to CTD
+variables.
+
+The longitude values are degrees west stored as positive numbers. The plotting
+scripts combine longitude and latitude with the haversine formula and use
+distance from 8.9145° W as the horizontal coordinate. The calculation uses the
+latitude recorded in each input table because the CTD files describe the
+transect at 42.0° N whereas the nutrient files record 42.142° N. For CTD, the
+offshore endpoint at 9.708° W is 65.57 km from the coastal endpoint.
 
 ## Known missing exploratory input
 

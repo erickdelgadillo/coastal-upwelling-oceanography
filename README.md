@@ -77,6 +77,30 @@ both the original `jet` scale and variable-specific cmocean alternatives under
 [`live_scripts/longitudinal/README.md`](live_scripts/longitudinal/README.md)
 for the audit findings and data mapping.
 
+Both longitudinal generators convert the source longitude and latitude to
+great-circle distance from the coastal end of the transect. The horizontal axis
+therefore preserves the measured, non-uniform spacing between profiles. The CTD
+transect runs from 0 to 65.57 km; the calculation uses the latitude recorded in
+each CTD or nutrient input table.
+
+## Animate the daily CTD transects
+
+The static longitudinal sections are single-day snapshots, not averages. The
+additional daily CTD transects recovered from the local ENVISION archive can be
+animated with:
+
+```matlab
+addpath(fullfile(pwd, 'scripts', 'longitudinal'));
+generate_longitudinal_ctd_animation;
+```
+
+The function creates 16-frame `jet` and cmocean GIFs under
+`figures/longitudinal/animations/`. Each frame contains temperature, salinity,
+fluorescence, turbidity, and PAR with fixed colour limits. Nutrients are not
+animated because only day-1 longitudinal nutrient observations are available.
+The GIFs are generated products and are not committed in advance; run the
+function in MATLAB to create them reproducibly.
+
 ## Run
 
 Start MATLAB in the repository root:
