@@ -57,20 +57,20 @@ for the offshore and coastal stations.*
 *Seasonal ammonium, nitrite, nitrate, silicate, and phosphate profiles
 for the offshore and coastal stations.*
 
-### Longitudinal structure
+### Seasonal evolution along the coastal–offshore transect
 
 <p align="center">
-  <img src="figures/longitudinal/cmocean/spring_temperature.png" width="48%">
-  <img src="figures/longitudinal/cmocean/spring_chlorophyll_a.png" width="48%">
+  <img src="figures/longitudinal/animated/temperature.gif" width="80%">
 </p>
+
+*Seasonal evolution of the temperature structure from the coastal to the
+offshore station.*
 
 <p align="center">
-  <em>Example spring longitudinal sections showing temperature and chlorophyll-a
-  structure across the ENV1–ENV3 transect.</em>
+  <img src="figures/longitudinal/animated/chlorophyll_a.gif" width="80%">
 </p>
 
-Additional seasonal and biogeochemical sections are available in
-[`figures/longitudinal/`](figures/longitudinal/).
+*Seasonal evolution of chlorophyll-a distribution along the transect.*
 
 
 ## Assemble the publication matrices
