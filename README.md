@@ -1,4 +1,4 @@
-# Coastal upwelling oceanography
+# Coastal upwelling systems (Oceanography)
 
 ![MATLAB](https://img.shields.io/badge/MATLAB-analysis-orange)
 ![Oceanography](https://img.shields.io/badge/oceanography-CTD%20%26%20nutrients-0077B6)
