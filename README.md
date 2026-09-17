@@ -40,6 +40,39 @@ detailed figure mapping are documented in
 The other scripts and workbooks are retained as additional historical or
 exploratory analyses and are not claimed to reproduce published figures.
 
+## Representative outputs
+
+The repository includes reproducible visualizations of the physical and
+biogeochemical structure of the coastal upwelling system.
+
+### Seasonal vertical profiles
+
+![Seasonal CTD profiles](figures/supplementary_figure_1_cmocean.png)
+
+*Seasonal temperature, chlorophyll-a, PAR, salinity, and turbidity profiles
+for the offshore and coastal stations.*
+
+![Seasonal nutrient profiles](figures/supplementary_figure_2_cmocean.png)
+
+*Seasonal ammonium, nitrite, nitrate, silicate, and phosphate profiles
+for the offshore and coastal stations.*
+
+### Longitudinal structure
+
+<p align="center">
+  <img src="figures/longitudinal/cmocean/spring_temperature.png" width="48%">
+  <img src="figures/longitudinal/cmocean/spring_chlorophyll_a.png" width="48%">
+</p>
+
+<p align="center">
+  <em>Example spring longitudinal sections showing temperature and chlorophyll-a
+  structure across the ENV1–ENV3 transect.</em>
+</p>
+
+Additional seasonal and biogeochemical sections are available in
+[`figures/longitudinal/`](figures/longitudinal/).
+
+
 ## Assemble the publication matrices
 
 The four publication Live Scripts were executed interactively with MATLAB
