@@ -18,3 +18,4 @@ codegen/
 # Generated analysis outputs
 results/
 data/**/*.png
+figures/longitudinal/animations/*.gif

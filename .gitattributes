@@ -10,3 +10,6 @@ third_party/** linguist-vendored
 
 # Scientific input workbooks are binary files.
 *.xlsx binary
+
+# Preserve archived CTD CSV files byte-for-byte, including their CRLF endings.
+data/longitudinal/daily_ctd/*.csv binary
